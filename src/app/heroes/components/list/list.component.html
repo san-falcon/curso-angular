@@ -1,0 +1,33 @@
+<!-- Directivas en Angular:
+? Una directiva en Angular es una clase que le dice al compilador de Angular cómo
+? modificar o manipular el DOM (Document Object Model) o los elementos de tu plantilla.
+
+? Ejemplos: *ngIf, *ngFor, [ngClass], etc.
+? Las directivas se pueden usar para mostrar u ocultar elementos, iterar sobre listas,
+? añadir comportamiento dinámico, etc.
+-->
+
+
+<h3>Lista de Héroes</h3>
+
+<div *ngIf="deleteHeroe; else messageDelete">
+  <h3>Héroe borrado <small class="text-danger">{{deleteHeroe}}</small></h3>
+</div>
+
+<ng-template #messageDelete>
+  <h3>No ha borrado nada.</h3>
+</ng-template>
+
+
+
+<button *ngIf="heroNames.length > 0" (click)="removeLastHero()" type="button" class="btn btn-outline-danger">
+  Borrar úlitmo héroe
+</button>
+
+
+<ul class="mt-2 list-group">
+  <!-- Convierte el li en un template, y lo usa para duplicarlo basado en la cantidad
+  de elementos dentro de la lista -->
+  <li *ngFor="let name of heroNames" class="list-group-item">{{name}}</li>
+</ul>
+<hr>

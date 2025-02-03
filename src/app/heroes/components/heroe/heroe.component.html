@@ -1,0 +1,31 @@
+<h1>Spiderdeman</h1>
+<dl>
+  <td>Nombre</td>
+  <dd>{{name}}</dd>
+
+  <td>Edad</td>
+  <dd>{{age}}</dd>
+
+  <td>Metodo</td>
+  <dd>{{getHeroDescription()}}</dd> <!-- Asi invocamos a un metodo -->
+
+  <td>Capitalizado</td>
+  <dd>{{capitalizeName}}</dd> <!-- Asi invocamos a un getter -->
+
+  <td>Operacion directa</td>
+  <dd>{{1 + 1}}</dd> <!-- Dentro de los dobles corchetes puede ir cualquier operacion js -->
+</dl>
+
+<!-- El *ngIf muestra el elemento html si su valor es true -->
+<button *ngIf="name !== 'Spiderman'" (click)="changeHeroes('Spiderman')" class="btn btn-primary me-2">
+  Cambiar nombre
+</button>
+
+<button *ngIf="age !== 25" (click)="changeAge(25)" class="btn btn-primary">
+  Cambiar edad
+</button>
+
+<button (click)="resetForm()" class="btn btn-warning ms-1">
+  Reset
+</button>
+<hr>
