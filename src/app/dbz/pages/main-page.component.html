@@ -1,0 +1,13 @@
+<h1>Hola mundo dbz</h1>
+<hr>
+<div class="row">
+  <div class="col">
+    <!-- Tenemos que escuchar el onDelete y conectarlo con el main page -->
+    <dbz-list [characterList]="characters" (onDeleteCharacter)="onDeleteCharacter($event)">
+    </dbz-list>
+  </div>
+  <div class="col">
+    <!-- Para escuchar o ejecutar eventos usamos los parentisis () -->
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+  </div>
+</div>

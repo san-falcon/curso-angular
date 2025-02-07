@@ -1,0 +1,17 @@
+<!--
+ ? Two-way binding = Significa que funciona en 2 direcciones
+ -->
+
+<h4>Agregar personaje</h4>
+<form class="row" autocomplete="off" (ngSubmit)="emitCharacter()">
+
+  <!-- Con [(ngModel)] hacemos enlace bidireccional - "Two-way binding" -->
+  <input type="text" name="name" [(ngModel)]="character.name" class="form-control mb-2" placeholder="Nombre">
+  <input type="number" name="power" [(ngModel)]="character.power" class="form-control mb-2" placeholder="Poder">
+  <button type="submit" class="btn btn-primary">
+    Agregar
+  </button>
+  <!-- <pre>
+    {{character | json}}
+  </pre> -->
+</form>
